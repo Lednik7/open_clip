@@ -124,8 +124,8 @@ def create_model(
     has_hf_hub_prefix = model_name.startswith(HF_HUB_PREFIX)
     if has_hf_hub_prefix:
         model_id = model_name[len(HF_HUB_PREFIX):]
-        checkpoint_path = download_pretrained_from_hf(model_id, cache_dir=cache_dir)
-        config_path = download_pretrained_from_hf(model_id, filename='open_clip_config.json', cache_dir=cache_dir)
+        checkpoint_path = "/app/Maxim/clip/CLIP-ViT-bigG-14-laion2B-39B-b160k/open_clip_pytorch_model.bin" # download_pretrained_from_hf(model_id, cache_dir=cache_dir)
+        config_path = "/app/Maxim/clip/CLIP-ViT-bigG-14-laion2B-39B-b160k/open_clip_config.json" # download_pretrained_from_hf(model_id, filename='open_clip_config.json', cache_dir=cache_dir)
 
         with open(config_path, 'r', encoding='utf-8') as f:
             config = json.load(f)
