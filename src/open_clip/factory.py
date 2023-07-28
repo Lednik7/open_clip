@@ -76,7 +76,7 @@ def get_model_config(model_name):
 
 def get_tokenizer(model_name):
     if model_name.startswith(HF_HUB_PREFIX):
-        tokenizer = HFTokenizer(model_name[len(HF_HUB_PREFIX):])
+        tokenizer = HFTokenizer("/app/Maxim/clip/CLIP-ViT-bigG-14-laion2B-39B-b160k/")
     else:
         config = get_model_config(model_name)
         tokenizer = HFTokenizer(
